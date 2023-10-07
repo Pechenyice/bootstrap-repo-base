@@ -40,11 +40,19 @@ Per app specific actions hints below
 Bootstrap features:
 - Nest.js with all it's out of box features
 - Env variables initialization and validation
+- Prisma ORM with migrations flow
+- Healthcheck (/health -> 200 "ok") for k8s integration
 
 ### Env init
 
 ```bash
 $ pnpm init:env
+```
+
+### Generate Prisma migration
+
+```bash
+$ pnpm prisma:migrate {MIGRATION_NAME}
 ```
 
 ### Test

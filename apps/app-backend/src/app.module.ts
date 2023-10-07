@@ -6,6 +6,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { config } from './config/config';
 
+import { UserModule } from './modules/user/user.module';
+import { HealthcheckModule } from './modules/healthcheck/healthcheck.module';
+
+const modules = [HealthcheckModule, UserModule];
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -24,6 +29,8 @@ import { config } from './config/config';
         readyLog: true,
       }),
     }),
+
+    ...modules,
   ],
   controllers: [AppController],
   providers: [AppService],
