@@ -8,8 +8,9 @@ import { config } from './config/config';
 
 import { UserModule } from './modules/user/user.module';
 import { HealthcheckModule } from './modules/healthcheck/healthcheck.module';
+import { CacheModule } from './modules/cache/Cache.module';
 
-const modules = [HealthcheckModule, UserModule];
+const modules = [CacheModule, HealthcheckModule, UserModule];
 
 @Module({
   imports: [
