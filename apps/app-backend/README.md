@@ -26,6 +26,11 @@ $ pnpm dev
 $ pnpm build
 ```
 
+## Extenal deps (Docker containers)
+
+- PSQL
+- Redis
+
 ## Apps specific information
 
 Per app specific actions hints below
