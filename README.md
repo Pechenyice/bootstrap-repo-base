@@ -1,81 +1,88 @@
-# Turborepo starter
+# Bootstrap-repo-base
 
-This is an official starter Turborepo.
+## Description
 
-## Using this example
+Bootstrap fullstack app with awesome functionality and dev comfort example
 
-Run the following command:
+## Project structure
 
-```sh
-npx create-turbo@latest
+Bootstrap uses monorepo structure style ([turbo](https://turbo.build/repo/docs/getting-started/create-new))
+
+### Installation
+
+```bash
+$ pnpm install
 ```
 
-## What's inside?
+### Running the apps
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+$ pnpm dev
 ```
 
-### Develop
+### Building the apps
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+$ pnpm build
 ```
 
-### Remote Caching
+## Extenal deps (Docker containers)
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- PSQL
+- Redis
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+## Apps specific information
 
+Per app specific actions hints below
+
+## apps/app-backend
+
+Bootstrap features:
+- Nest.js with all it's out of box features
+- Env variables initialization and validation
+- Prisma ORM with migrations flow
+- Healthcheck (/health -> 200 "ok") for k8s integration
+- GraphQL requests with auto schema generation (just run "pnpm dev" and look at schema.gql updates)
+
+### Env init
+
+```bash
+$ pnpm init:env
 ```
-cd my-turborepo
-npx turbo login
+
+### Generate Prisma migration
+
+```bash
+$ pnpm prisma:migrate {MIGRATION_NAME}
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Test
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+```bash
+# unit tests
+$ pnpm test
 
+# e2e tests
+$ pnpm test:e2e
+
+# test coverage
+$ pnpm test:cov
 ```
-npx turbo link
+
+## apps/app-frontend
+
+Bootstrap features:
+- Next.js 13
+- React-query for GraphQL requests with codegen
+
+### Env init
+
+```bash
+$ pnpm init:env
 ```
 
-## Useful Links
+### GQL codegen
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+```bash
+$ pnpm codegen
+```
