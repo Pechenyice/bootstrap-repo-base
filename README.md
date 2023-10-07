@@ -73,7 +73,7 @@ $ pnpm test:cov
 
 Bootstrap features:
 - Next.js 13
-- React-query for GraphQL requests with codegen
+- Graphql and REST requests styles both (React-query for GraphQL requests with codegen and Axios for classic requests). Look at page.tsx for example
 
 ### Env init
 
