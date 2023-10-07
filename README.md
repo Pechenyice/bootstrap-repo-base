@@ -94,3 +94,5 @@ $ pnpm codegen
 - CI/CD
 - Authorization (JWT/signed cookie)
 - Maybe gRPC microservices connection
+- Errors wrapping in app-backend nest app
+- Logger in app-backend nest app
