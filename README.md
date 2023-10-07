@@ -86,3 +86,10 @@ $ pnpm init:env
 ```bash
 $ pnpm codegen
 ```
+
+## TODO: next steps
+
+- Env params are not configured well in app-frontend
+- Eslint auto-formatting not working out of the turborepo box in app-frontend
+- CI/CD
+- Authorization (JWT/signed cookie)
