@@ -93,3 +93,4 @@ $ pnpm codegen
 - Eslint auto-formatting not working out of the turborepo box in app-frontend
 - CI/CD
 - Authorization (JWT/signed cookie)
+- Maybe gRPC microservices connection
